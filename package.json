@@ -1,0 +1,26 @@
+{
+  "name": "chat-ui",
+  "version": "1.0.0",
+  "description": "chat for learning to socket.io",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stasian33rus/chat-ui.git"
+  },
+  "author": "stasian33rus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stasian33rus/chat-ui/issues"
+  },
+  "homepage": "https://github.com/stasian33rus/chat-ui#readme",
+  "devDependencies": {
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "react": "^17.0.2"
+  }
+}

@@ -57,17 +57,17 @@ export const App: FunctionComponent = () => {
               {messages.map(({ message, from, nickName }, i) => {
                 if (from === chatId) {
                   return (
-                    <div key={i}>
+                    <Message key={i}>
                       {nickName && <MyNickName>{nickName}</MyNickName>}
                       {message}
-                    </div>
+                    </Message>
                   );
                 } else {
                   return (
-                    <div key={i}>
+                    <MyMessage key={i}>
                       {nickName && <NickName>{nickName}</NickName>}
                       {message}
-                    </div>
+                    </MyMessage>
                   );
                 }
               })}
@@ -138,9 +138,62 @@ export const App: FunctionComponent = () => {
   );
 };
 
-const Header = styled.div``;
-const Chat = styled.div``;
+const Header = styled.div`
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  gap: 15px;
+`;
+
+const Chat = styled.div`
+  position: absolute;
+  width: 70%;
+  height: 25%;
+  background-color: #292f56;
+  border: solid 4px black;
+  border-radius: 16px;
+  padding: 14px;
+  top: 5%;
+`;
+
+const Message = styled.div`
+  width: fit-content;
+  margin-top: 16px;
+  background-color: #fff;
+  color: black;
+  border-radius: 15px;
+  font-weight: 400;
+  font-size: 0.75rem;
+  padding: 0 20px;
+  overflow-wrap: break-word;
+  max-width: 75%;
+`;
+
+const MyMessage = styled(Message)`
+  margin-top: 12px;
+  margin-left: auto;
+`;
+
 const Title = styled.div``;
-const ChatBody = styled.div``;
-const MyNickName = styled.div``;
-const NickName = styled.div``;
+
+const ChatBody = styled.div`
+  overflow: auto;
+  height: 90%;
+`;
+
+const MyNickName = styled.div`
+  font-size: 0.5rem;
+  text-align: start;
+  color: yellow;
+`;
+
+const NickName = styled.div`
+  font-size: 0.5rem;
+  text-align: end;
+  color: forestgreen;
+`;

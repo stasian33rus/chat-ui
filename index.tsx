@@ -1,6 +1,9 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
+import { App } from "./App";
+import { GlobalStyles } from "./GlobalStyles";
+import theme from "./theme";
 
 const Root = styled.div`
   width: 100%;
@@ -8,21 +11,12 @@ const Root = styled.div`
   background-color: gray;
 `;
 
-const Content = styled.div`
-  width: fit-content;
-  margin: auto;
-  background-color: #fff;
-  color: red;
-  font-weight: 600;
-  font-size: 26px;
-`;
-
-const App: FunctionComponent = () => {
-  return (
+ReactDOM.render(
+  <ThemeProvider theme={theme}>
+    <GlobalStyles />
     <Root>
-      <Content>Hello, world!</Content>
+      <App />
     </Root>
-  );
-};
-
-ReactDOM.render(<App />, document.getElementById("root"));
+  </ThemeProvider>,
+  document.getElementById("root")
+);
